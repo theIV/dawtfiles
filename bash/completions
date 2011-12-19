@@ -1,0 +1,5 @@
+# git completions
+GIT_PS1_SHOWDIRTYSTATE="true"
+GIT_PS1_SHOWUNTRACKEDFILES="true"
+GIT_PS1_SHOWUPSTREAM="auto"
+. ~/Developer/etc/bash_completion.d/git-completion.bash

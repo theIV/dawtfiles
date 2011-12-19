@@ -1,0 +1,59 @@
+# terminal stuff
+alias ..="cd .."
+alias cdd="cd -"
+alias pcp="pwd | pbcopy"
+alias v="mvim ."
+
+# if the dircolors utility is available, set that up too
+dircolors="$(type -P gdircolors dircolors | head -1)"
+test -n "$dircolors" && {
+    COLORS=/etc/DIR_COLORS
+    test -e "/etc/DIR_COLORS.$TERM"   && COLORS="/etc/DIR_COLORS.$TERM"
+    test -e "$HOME/.dircolors"        && COLORS="$HOME/.dircolors"
+    test ! -e "$COLORS"               && COLORS=
+    eval `$dircolors --sh $COLORS`
+}
+unset dircolors
+
+# setup the main ls alias if we've established common args
+test -n "$LS_COMMON" &&
+alias ls="command ls $LS_COMMON"
+
+#---
+
+# management
+alias rl=". ~/.bashrc"
+alias ec="cd ~/dawtfiles && mvim ~/dawtfiles"
+
+#---
+
+# documents
+alias ws="open ~/Documents/work_scenyc.sparsebundle"
+alias wp="open ~/Documents/work_personal.sparsebundle"
+
+#---
+
+# git stuff
+alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
+
+function gbt() {
+  git branch --track $2 $1/$2
+  git checkout $2
+}
+
+#---
+
+# ruby & rails stuff
+alias b="bundle"
+alias be="b exec"
+alias bi="b install"
+alias r="be rake"
+alias rdm="r db:migrate"
+alias crap="cap"
+alias ss="./script/server"
+alias sa="./script/autospec"
+
+#---
+
+# rider stuff
+alias here?="nmap -sP 192.168.1.0/24"

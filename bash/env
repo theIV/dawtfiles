@@ -1,0 +1,7 @@
+export PATH=/Users/frecial/bin:$PATH
+
+export VIM_APP_DIR=/Applications/development
+export TERM_EDITOR=/Applications/development/MacVim.app
+export NODE_PATH=/Users/frecial/Developer/lib/node
+
+export LS_COMMON="-alHG"

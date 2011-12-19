@@ -1,0 +1,9 @@
+. ~/dawtfiles/bash/colors
+. ~/dawtfiles/bash/git_since
+
+export PS1_USER="\[$ERED\]\u\[$NO_COLOR\]"
+export PS1_PATH="| \[$UGREEN\]\W\[$NO_COLOR\]"
+export PS1_GIT="| \[$EMAGENTA\]\$(vcprompt -f %b%m)\[$NO_COLOR\]"
+#export PS1_GIT_SINCE="| $(get_committing)\[$NO_COLOR\]"
+
+export PS1="[ ${PS1_USER} ${PS1_PATH} ${PS1_GIT} ]\n→  "
